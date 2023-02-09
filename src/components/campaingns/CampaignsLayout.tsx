@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import './Campaigns.css'
 
 const CampaignsLayout = () => {
   return (
     <div>
-      <h4>Data will be displayed here</h4>
+      <h4>Caching Data POC</h4>
       <nav>
         <ul>
           <li>
