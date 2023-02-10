@@ -4,7 +4,7 @@ import moment from 'moment';
 import './Campaigns.css';
 // import { persistor } from '../../app/store';
 
-const IDs = [230080, 230081];
+const IDs = [230080, 230081, 233776, 233778];
 
 const Schedules = () => {
   const handleReload = () => {
@@ -17,6 +17,7 @@ const Schedules = () => {
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Position</th>
             <th>Fulfilled Time Stamp</th>
@@ -52,6 +53,7 @@ const ChildComponent = ({ id }: { id: number }) => {
 
   return (
     <tr>
+      <td>{id}</td>
       <td style={{ color: data ? 'initial' : 'grey', opacity: data ? 1 : 0.5 }}>
         {data ? data.advertisement : id}
       </td>

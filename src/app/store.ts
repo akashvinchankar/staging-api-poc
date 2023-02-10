@@ -9,6 +9,7 @@ import { campaignsSlice } from '../features/campaign/campaignsSlice';
 import { schedulesSlice } from '../features/campaign/schedulesSlice';
 import { schedulesNameSlice } from '../features/campaign/seperateSlices/schdeulesNameSlice';
 import { schedulesDaysSlice } from '../features/campaign/seperateSlices/scheduleDaysSlice';
+import { schedulesDynamicSlice } from '../features/campaign/seperateSlices/schedulesDynamicSlice';
 
 // import storage from 'redux-persist/lib/storage';
 // import {
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   [schedulesSlice.reducerPath]: schedulesSlice.reducer,
   [schedulesNameSlice.reducerPath]: schedulesNameSlice.reducer,
   [schedulesDaysSlice.reducerPath]: schedulesDaysSlice.reducer,
+  [schedulesDynamicSlice.reducerPath]: schedulesDynamicSlice.reducer,
 });
 
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -43,7 +45,8 @@ export const store = configureStore({
       campaignsSlice.middleware,
       schedulesSlice.middleware,
       schedulesNameSlice.middleware,
-      schedulesDaysSlice.middleware
+      schedulesDaysSlice.middleware,
+      schedulesDynamicSlice.middleware,
     ),
 });
 

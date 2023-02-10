@@ -17,6 +17,9 @@ const CampaignsLayout = () => {
           <li>
             <Link to="/campaigns/schdeulesSeperate">Schedules Seperate</Link>
           </li>
+          <li>
+            <Link to="/campaigns/schdeulesDynamic">Schedules Dynamic</Link>
+          </li>
         </ul>
       </nav>
 

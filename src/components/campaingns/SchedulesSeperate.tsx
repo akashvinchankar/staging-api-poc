@@ -3,7 +3,7 @@ import { useFetchSchedulesNameQuery } from '../../features/campaign/seperateSlic
 import { useFetchSchedulesDaysQuery } from '../../features/campaign/seperateSlices/scheduleDaysSlice';
 import './Campaigns.css';
 
-const IDs = [230080, 230081];
+const IDs = [230080, 230081, 233776, 233778];
 
 const SchedulesSeperate = () => {
   const handleReload = () => {
