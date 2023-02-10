@@ -1,6 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
 
+// Interface for data from Schdules
 interface Schedule {
   date_created: string;
   start_date: string;
@@ -17,6 +18,7 @@ interface ApiResponse {
   data: Schedule;
 }
 
+// base query for getting all schedules by passing an id using axios
 const schedulesBaseQuery = async ({ id }: { id: number }) => {
   try {
     const response = await axios.get(
@@ -30,6 +32,7 @@ const schedulesBaseQuery = async ({ id }: { id: number }) => {
   }
 };
 
+// creating a caching endpoint 
 export const schedulesSlice = createApi({
   reducerPath: 'schedulesSlice',
   baseQuery: schedulesBaseQuery,

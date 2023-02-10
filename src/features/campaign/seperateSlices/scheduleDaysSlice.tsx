@@ -5,6 +5,7 @@ interface ScheduleDays {
   days: string;
 }
 
+// base query for getting days by passing an id using axios
 const schedulesDaysBaseQuery = async ({ id }: { id: number }) => {
   try {
     const response = await axios.get(
@@ -18,6 +19,7 @@ const schedulesDaysBaseQuery = async ({ id }: { id: number }) => {
   }
 };
 
+// creating a caching endpoint for days
 export const schedulesDaysSlice = createApi({
   reducerPath: 'schedulesDaysSlice',
   baseQuery: schedulesDaysBaseQuery,

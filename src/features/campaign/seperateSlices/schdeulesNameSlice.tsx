@@ -5,6 +5,7 @@ interface ScheduleName {
   name: string;
 }
 
+// base query for getting names by passing an id using axios
 const schedulesNameBaseQuery = async ({ id }: { id: number }) => {
   try {
     const response = await axios.get(
@@ -18,6 +19,7 @@ const schedulesNameBaseQuery = async ({ id }: { id: number }) => {
   }
 };
 
+// creating a caching endpoint for names
 export const schedulesNameSlice = createApi({
   reducerPath: 'schedulesNameSlice',
   baseQuery: schedulesNameBaseQuery,

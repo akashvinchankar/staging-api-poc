@@ -3,6 +3,7 @@ import { useFetchSchedulesNameQuery } from '../../features/campaign/seperateSlic
 import { useFetchSchedulesDaysQuery } from '../../features/campaign/seperateSlices/scheduleDaysSlice';
 import './Campaigns.css';
 
+// IDs is an array of schedules IDs
 const IDs = [230080, 230081, 233776, 233778];
 
 const SchedulesSeperate = () => {
@@ -47,9 +48,13 @@ const SchedulesSeperate = () => {
 };
 
 const ChildComponent = ({ id }: { id: number }) => {
+  // getting data for name and days for a schedule through seprate hooks
   const { data: schName } = useFetchSchedulesNameQuery(id);
   const { data: schDays } = useFetchSchedulesDaysQuery(id);
 
+  // Returns a table row to display the schedule details
+  // If the data is available, the name and days are displayed in initial color
+  // If the data is not available, the id is displayed in grey with reduced opacity
   return (
     <tr>
       <td>{id}</td>
